@@ -4,6 +4,7 @@ from . import views
 
 router = DefaultRouter()
 router.register('vehiculos', views.VehiculoViewSet)
+router.register('documento', views.DocumentoViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),
