@@ -1,5 +1,5 @@
 import django_filters
-from venta.models.log_actividad import LogActividad
+from venta.models import LogActividad
 
 
 class LogActividadFilter(django_filters.FilterSet):

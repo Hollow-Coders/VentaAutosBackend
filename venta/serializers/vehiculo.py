@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from venta.models.vehiculo import Vehiculo
+from venta.models import Vehiculo
 
 
 class VehiculoSerializer(serializers.ModelSerializer):

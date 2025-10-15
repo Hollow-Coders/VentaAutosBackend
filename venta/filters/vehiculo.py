@@ -1,5 +1,5 @@
 import django_filters
-from venta.models.vehiculo import Vehiculo
+from venta.models import Vehiculo
 
 
 class VehiculoFilter(django_filters.FilterSet):

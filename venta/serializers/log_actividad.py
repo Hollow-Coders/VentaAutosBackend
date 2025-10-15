@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from venta.models.log_actividad import LogActividad
+from venta.models import LogActividad
 
 
 class LogActividadSerializer(serializers.ModelSerializer):

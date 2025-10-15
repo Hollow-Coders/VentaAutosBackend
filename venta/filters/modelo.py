@@ -1,5 +1,5 @@
 import django_filters
-from venta.models.modelo import Modelo
+from venta.models import Modelo
 
 
 class ModeloFilter(django_filters.FilterSet):

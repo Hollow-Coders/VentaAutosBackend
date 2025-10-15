@@ -1,5 +1,5 @@
 import django_filters
-from venta.models.subasta import Subasta
+from venta.models import Subasta
 
 
 class SubastaFilter(django_filters.FilterSet):

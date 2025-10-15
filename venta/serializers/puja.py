@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from venta.models.puja import Puja
+from venta.models import Puja
 
 
 class PujaSerializer(serializers.ModelSerializer):

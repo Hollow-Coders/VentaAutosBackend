@@ -1,5 +1,5 @@
 import django_filters
-from venta.models.solicitud_verificacion import SolicitudVerificacion
+from venta.models import SolicitudVerificacion
 
 
 class SolicitudVerificacionFilter(django_filters.FilterSet):
