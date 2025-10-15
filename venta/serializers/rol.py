@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from venta.models.rol import Rol
+from venta.models import Rol
 
 
 class RolSerializer(serializers.ModelSerializer):

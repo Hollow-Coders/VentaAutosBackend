@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from venta.models.subasta import Subasta
+from venta.models import Subasta
 
 
 class SubastaSerializer(serializers.ModelSerializer):

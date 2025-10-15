@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from venta.models.marca import Marca
+from venta.models import Marca
 
 
 class MarcaSerializer(serializers.ModelSerializer):

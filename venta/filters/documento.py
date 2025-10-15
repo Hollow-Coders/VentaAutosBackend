@@ -1,5 +1,5 @@
 import django_filters
-from venta.models.documento import Documento
+from venta.models import Documento
 
 
 class DocumentoFilter(django_filters.FilterSet):

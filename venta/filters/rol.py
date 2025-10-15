@@ -1,5 +1,5 @@
 import django_filters
-from venta.models.rol import Rol
+from venta.models import Rol
 
 
 class RolFilter(django_filters.FilterSet):

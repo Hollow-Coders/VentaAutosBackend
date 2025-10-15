@@ -1,5 +1,5 @@
 import django_filters
-from venta.models.puja import Puja
+from venta.models import Puja
 
 
 class PujaFilter(django_filters.FilterSet):

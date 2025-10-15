@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from venta.models.documento import Documento
+from venta.models import Documento
 
 
 class DocumentoSerializer(serializers.ModelSerializer):

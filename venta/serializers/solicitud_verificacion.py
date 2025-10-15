@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from venta.models.solicitud_verificacion import SolicitudVerificacion
+from venta.models import SolicitudVerificacion
 
 
 class SolicitudVerificacionSerializer(serializers.ModelSerializer):

@@ -1,5 +1,5 @@
 import django_filters
-from venta.models.usuario import Usuario
+from venta.models import Usuario
 
 
 class UsuarioFilter(django_filters.FilterSet):

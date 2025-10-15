@@ -1,5 +1,5 @@
 import django_filters
-from venta.models.vehiculo_foto import VehiculoFoto
+from venta.models import VehiculoFoto
 
 
 class VehiculoFotoFilter(django_filters.FilterSet):

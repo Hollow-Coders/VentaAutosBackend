@@ -1,5 +1,5 @@
 import django_filters
-from venta.models.marca import Marca
+from venta.models import Marca
 
 
 class MarcaFilter(django_filters.FilterSet):
