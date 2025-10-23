@@ -1,6 +1,7 @@
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
 from . import views
+from .views import auth
 
 router = DefaultRouter()
 router.register('vehiculos', views.VehiculoViewSet)
@@ -18,5 +19,7 @@ router.register('ventas', views.VentaViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),
+    path('register/', auth.RegisterView.as_view(), name='register'),
+    path('login/', auth.LoginView.as_view(), name='login'),  
 ]
 
