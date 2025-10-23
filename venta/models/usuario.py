@@ -1,6 +1,5 @@
 from django.db import models
 
-
 class Usuario(models.Model):
     nombre = models.CharField(
         max_length=60,
@@ -14,6 +13,14 @@ class Usuario(models.Model):
         max_length=80,
         unique=True,
         help_text='Correo electrónico del usuario'
+    )
+    contrasena = models.CharField(
+        max_length=128,
+        help_text='Contraseña del usuario'
+    )
+    token = models.CharField(
+        max_length=256,
+        help_text='Token de sesion del usuario'
     )
     fecha_creacion = models.DateField(
         auto_now_add=True,
@@ -39,4 +46,4 @@ class Usuario(models.Model):
 
     def __str__(self):
         return f"{self.nombre} {self.apellido}"
-
+    
