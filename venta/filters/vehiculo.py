@@ -45,6 +45,9 @@ class VehiculoFilter(django_filters.FilterSet):
     # Filtro para vehículos disponibles
     disponible = django_filters.BooleanFilter(method='filter_disponible')
     
+    # Filtro por tipo de vehículo
+    tipo_vehiculo = django_filters.CharFilter(field_name='tipo_vehiculo', lookup_expr='iexact')
+    
     class Meta:
         model = Vehiculo
         fields = [
@@ -57,6 +60,7 @@ class VehiculoFilter(django_filters.FilterSet):
             'tipo_combustible',
             'kilometraje',
             'estado',
+            'tipo_vehiculo',
         ]
     
     def filter_disponible(self, queryset, name, value):

@@ -52,6 +52,12 @@ class Vehiculo(models.Model):
         auto_now_add=True,
         help_text='Fecha de publicación'
     )
+    tipo_vehiculo = models.CharField(
+        max_length=60,
+        default='Automovil',
+        help_text='Tipo de vehículo (auto, moto, etc.)'
+    )
+
 
     class Meta:
         db_table = 'vehiculos'
