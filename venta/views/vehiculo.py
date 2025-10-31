@@ -9,6 +9,8 @@ from rest_framework import viewsets
 from venta.serializers import VehiculoSerializer
 # filters
 from venta.filters import VehiculoFilter
+# cosa para que funcionen los filtros?
+from django_filters.rest_framework import DjangoFilterBackend
 
 
 class VehiculoViewSet(viewsets.ModelViewSet):
@@ -19,4 +21,5 @@ class VehiculoViewSet(viewsets.ModelViewSet):
     queryset = Vehiculo.objects.all()
     serializer_class = VehiculoSerializer
     filterset_class = VehiculoFilter
+    filter_backends = [DjangoFilterBackend]
 
