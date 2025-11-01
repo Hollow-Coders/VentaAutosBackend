@@ -37,6 +37,9 @@ class LoginView(APIView):
         refresh = RefreshToken.for_user(usuario)
         return Response({
             "id": usuario.id,
+            "nombre": usuario.nombre,
+            "apellido": usuario.apellido,
+            "correo": usuario.correo,
             "access": str(refresh.access_token)
         })
     
