@@ -57,13 +57,26 @@ class Vehiculo(models.Model):
         default='Automovil',
         help_text='Tipo de vehículo (auto, moto, etc.)'
     )
-
+    ubicacion = models.CharField(
+        max_length=200,
+        null=True,
+        blank=True,
+        help_text='Ubicación del vehículo',
+        db_index=True
+    )
 
     class Meta:
         db_table = 'vehiculos'
         ordering = ['-fecha_publicacion']
         verbose_name = 'Vehículo'
         verbose_name_plural = 'Vehículos'
+        indexes = [
+            models.Index(fields=['ubicacion']),
+            models.Index(fields=['precio']),
+            models.Index(fields=['año']),
+            models.Index(fields=['marca', 'modelo']),
+            models.Index(fields=['estado']),
+        ]
 
     def __str__(self):
         return f"{self.marca.nombre} {self.modelo.nombre} {self.año}"

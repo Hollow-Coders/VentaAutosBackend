@@ -1,5 +1,6 @@
 from rest_framework import serializers
 from venta.models import Vehiculo
+from django.conf import settings
 
 
 class VehiculoSerializer(serializers.ModelSerializer):
@@ -23,6 +24,7 @@ class VehiculoSerializer(serializers.ModelSerializer):
             'modelo_nombre',
             'año',
             'precio',
+            'ubicacion',
             'tipo_transmision',
             'tipo_combustible',
             'kilometraje',
@@ -39,8 +41,16 @@ class VehiculoSerializer(serializers.ModelSerializer):
         return f"{obj.usuario.nombre} {obj.usuario.apellido}"
     
     def get_fotos(self, obj):
-        """Retorna las URLs de las fotos del vehículo"""
-        return [foto.url_imagen for foto in obj.fotos.all()]
+        """Retorna las URLs completas de las fotos del vehículo"""
+        request = self.context.get('request')
+        fotos = []
+        for foto in obj.fotos.all():
+            if foto.url_imagen:
+                if request:
+                    fotos.append(request.build_absolute_uri(foto.url_imagen.url))
+                else:
+                    fotos.append(f"{settings.MEDIA_URL}{foto.url_imagen.url}")
+        return fotos
     
     def get_total_documentos(self, obj):
         """Retorna el total de documentos del vehículo"""

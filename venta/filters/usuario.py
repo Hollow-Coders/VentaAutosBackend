@@ -30,6 +30,7 @@ class UsuarioFilter(django_filters.FilterSet):
         fields = [
             'nombre',
             'apellido',
+            'nombre_completo',
             'correo',
             'estado',
             'rol',

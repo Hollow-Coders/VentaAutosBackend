@@ -22,4 +22,10 @@ class VehiculoViewSet(viewsets.ModelViewSet):
     serializer_class = VehiculoSerializer
     filterset_class = VehiculoFilter
     filter_backends = [DjangoFilterBackend]
+    
+    def get_serializer_context(self):
+        """Agregar request al contexto del serializer"""
+        context = super().get_serializer_context()
+        context['request'] = self.request
+        return context
 

@@ -9,7 +9,7 @@ from django.conf import settings
 class RegisterSerializer(serializers.ModelSerializer):
     class Meta:
         model = Usuario
-        fields = ['nombre', 'apellido', 'correo', 'contrasena', 'rol']
+        fields = ['nombre', 'nombre_completo','apellido', 'correo', 'contrasena', 'rol']
         extra_kwargs = {
             'contrasena': {'write_only': True}
         }

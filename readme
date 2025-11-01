@@ -1,1 +1,4 @@
-Hola
+pip freeze > requirements.txt  ////actualizar requirements
+
+pip install -r requirements.txt ////instalar los requirements
+

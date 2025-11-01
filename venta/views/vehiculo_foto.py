@@ -20,3 +20,9 @@ class VehiculoFotoViewSet(viewsets.ModelViewSet):
     queryset = VehiculoFoto.objects.all()
     serializer_class = VehiculoFotoSerializer
     filterset_class = VehiculoFotoFilter
+    
+    def get_serializer_context(self):
+        """Agregar request al contexto del serializer"""
+        context = super().get_serializer_context()
+        context['request'] = self.request
+        return context

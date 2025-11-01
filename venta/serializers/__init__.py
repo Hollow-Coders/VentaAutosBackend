@@ -10,4 +10,6 @@ from .usuario import UsuarioSerializer
 from .vehiculo_foto import VehiculoFotoSerializer
 from .vehiculo import VehiculoSerializer
 from .venta import VentaSerializer
+from .perfil import PerfilSerializer
+from .catalogo import CatalogoSerializer
 

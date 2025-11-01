@@ -10,3 +10,5 @@ from .usuario import UsuarioViewSet
 from .vehiculo_foto import VehiculoFotoViewSet
 from .vehiculo import VehiculoViewSet
 from .venta import VentaViewSet
+from .perfil import PerfilViewSet
+from .catalogo import CatalogoViewSet

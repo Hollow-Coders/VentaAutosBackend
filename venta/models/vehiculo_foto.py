@@ -8,9 +8,11 @@ class VehiculoFoto(models.Model):
         related_name='fotos',
         help_text='Vehículo de la foto'
     )
-    url_imagen = models.CharField(
-        max_length=150,
-        help_text='URL de la imagen'
+    url_imagen = models.ImageField(
+        upload_to='vehiculos/',
+        null=True,
+        blank=True,
+        help_text='Imagen del vehículo'
     )
 
     class Meta:

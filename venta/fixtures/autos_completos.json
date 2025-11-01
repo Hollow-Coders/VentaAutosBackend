@@ -237,6 +237,7 @@
     "fields": {
       "nombre": "Carlos",
       "apellido": "Rodríguez",
+      "nombre_completo": "Carlos Rodríguez",
       "correo": "carlos.rodriguez@email.com",
       "contrasena": "pbkdf2_sha256$260000$example$hash",
       "token": "token_carlos_123",
@@ -251,6 +252,7 @@
     "fields": {
       "nombre": "María",
       "apellido": "González",
+      "nombre_completo": "María González",
       "correo": "maria.gonzalez@email.com",
       "contrasena": "pbkdf2_sha256$260000$example$hash",
       "token": "token_maria_456",
@@ -265,6 +267,7 @@
     "fields": {
       "nombre": "Juan",
       "apellido": "Pérez",
+      "nombre_completo": "Juan Pérez",
       "correo": "juan.perez@email.com",
       "contrasena": "pbkdf2_sha256$260000$example$hash",
       "token": "token_juan_789",
@@ -279,6 +282,7 @@
     "fields": {
       "nombre": "Ana",
       "apellido": "López",
+      "nombre_completo": "Ana López",
       "correo": "ana.lopez@email.com",
       "contrasena": "pbkdf2_sha256$260000$example$hash",
       "token": "token_ana_101",
@@ -293,6 +297,7 @@
     "fields": {
       "nombre": "Luis",
       "apellido": "Martínez",
+      "nombre_completo": "Luis Martínez",
       "correo": "luis.martinez@email.com",
       "contrasena": "pbkdf2_sha256$260000$example$hash",
       "token": "token_luis_202",
@@ -307,6 +312,7 @@
     "fields": {
       "nombre": "Sofia",
       "apellido": "Hernández",
+      "nombre_completo": "Sofia Hernández",
       "correo": "sofia.hernandez@email.com",
       "contrasena": "pbkdf2_sha256$260000$example$hash",
       "token": "token_sofia_303",
@@ -321,6 +327,7 @@
     "fields": {
       "nombre": "Diego",
       "apellido": "García",
+      "nombre_completo": "Diego García",
       "correo": "diego.garcia@email.com",
       "contrasena": "pbkdf2_sha256$260000$example$hash",
       "token": "token_diego_404",
@@ -335,6 +342,7 @@
     "fields": {
       "nombre": "Carmen",
       "apellido": "Vargas",
+      "nombre_completo": "Carmen Vargas",
       "correo": "carmen.vargas@email.com",
       "contrasena": "pbkdf2_sha256$260000$example$hash",
       "token": "token_carmen_505",
@@ -357,7 +365,9 @@
       "kilometraje": 45000,
       "descripcion": "Toyota Corolla en excelente estado, mantenimiento al día",
       "estado": "disponible",
-      "fecha_publicacion": "2024-10-15"
+      "fecha_publicacion": "2024-10-15",
+      "tipo_vehiculo": "Automovil",
+      "ubicacion": "Bogotá, Colombia"
     }
   },
   {
@@ -374,7 +384,9 @@
       "kilometraje": 52000,
       "descripcion": "Honda Civic bien cuidado, único dueño",
       "estado": "disponible",
-      "fecha_publicacion": "2024-10-14"
+      "fecha_publicacion": "2024-10-14",
+      "tipo_vehiculo": "Automovil",
+      "ubicacion": "Medellín, Colombia"
     }
   },
   {
@@ -391,7 +403,9 @@
       "kilometraje": 28000,
       "descripcion": "Ford F-150 4x4, perfecta para trabajo pesado",
       "estado": "disponible",
-      "fecha_publicacion": "2024-10-13"
+      "fecha_publicacion": "2024-10-13",
+      "tipo_vehiculo": "Camioneta",
+      "ubicacion": "Cali, Colombia"
     }
   },
   {
@@ -408,7 +422,9 @@
       "kilometraje": 65000,
       "descripcion": "Chevrolet Cruze económico y confiable",
       "estado": "disponible",
-      "fecha_publicacion": "2024-10-12"
+      "fecha_publicacion": "2024-10-12",
+      "tipo_vehiculo": "Automovil",
+      "ubicacion": "Barranquilla, Colombia"
     }
   },
   {
@@ -425,7 +441,9 @@
       "kilometraje": 40000,
       "descripcion": "Nissan Altima cómodo y espacioso",
       "estado": "disponible",
-      "fecha_publicacion": "2024-10-11"
+      "fecha_publicacion": "2024-10-11",
+      "tipo_vehiculo": "Automovil",
+      "ubicacion": "Bogotá, Colombia"
     }
   },
   {
@@ -442,7 +460,9 @@
       "kilometraje": 55000,
       "descripcion": "Volkswagen Jetta alemán, muy bien mantenido",
       "estado": "disponible",
-      "fecha_publicacion": "2024-10-10"
+      "fecha_publicacion": "2024-10-10",
+      "tipo_vehiculo": "Automovil",
+      "ubicacion": "Medellín, Colombia"
     }
   },
   {
@@ -459,7 +479,9 @@
       "kilometraje": 15000,
       "descripcion": "BMW Serie 3 deportivo, garantía de fábrica",
       "estado": "disponible",
-      "fecha_publicacion": "2024-10-09"
+      "fecha_publicacion": "2024-10-09",
+      "tipo_vehiculo": "Automovil",
+      "ubicacion": "Bogotá, Colombia"
     }
   },
   {
@@ -476,7 +498,9 @@
       "kilometraje": 22000,
       "descripcion": "Mercedes-Benz Clase C lujo y elegancia",
       "estado": "disponible",
-      "fecha_publicacion": "2024-10-08"
+      "fecha_publicacion": "2024-10-08",
+      "tipo_vehiculo": "Automovil",
+      "ubicacion": "Medellín, Colombia"
     }
   },
   {
@@ -493,7 +517,9 @@
       "kilometraje": 38000,
       "descripcion": "Toyota RAV4 SUV familiar, 4x4",
       "estado": "disponible",
-      "fecha_publicacion": "2024-10-07"
+      "fecha_publicacion": "2024-10-07",
+      "tipo_vehiculo": "SUV",
+      "ubicacion": "Cali, Colombia"
     }
   },
   {
@@ -510,7 +536,9 @@
       "kilometraje": 48000,
       "descripcion": "Honda CR-V SUV confiable, perfecta para familia",
       "estado": "disponible",
-      "fecha_publicacion": "2024-10-06"
+      "fecha_publicacion": "2024-10-06",
+      "tipo_vehiculo": "SUV",
+      "ubicacion": "Barranquilla, Colombia"
     }
   },
   {
@@ -527,7 +555,9 @@
       "kilometraje": 32000,
       "descripcion": "Ford Explorer SUV 7 pasajeros, 4x4",
       "estado": "disponible",
-      "fecha_publicacion": "2024-10-05"
+      "fecha_publicacion": "2024-10-05",
+      "tipo_vehiculo": "SUV",
+      "ubicacion": "Bogotá, Colombia"
     }
   },
   {
@@ -544,7 +574,9 @@
       "kilometraje": 42000,
       "descripcion": "Chevrolet Equinox SUV compacta, económica",
       "estado": "disponible",
-      "fecha_publicacion": "2024-10-04"
+      "fecha_publicacion": "2024-10-04",
+      "tipo_vehiculo": "SUV",
+      "ubicacion": "Medellín, Colombia"
     }
   },
   {
@@ -561,7 +593,9 @@
       "kilometraje": 70000,
       "descripcion": "Nissan Sentra económico, ideal para ciudad",
       "estado": "disponible",
-      "fecha_publicacion": "2024-10-03"
+      "fecha_publicacion": "2024-10-03",
+      "tipo_vehiculo": "Automovil",
+      "ubicacion": "Cali, Colombia"
     }
   },
   {
@@ -578,7 +612,9 @@
       "kilometraje": 35000,
       "descripcion": "Volkswagen Tiguan SUV alemana, muy confiable",
       "estado": "disponible",
-      "fecha_publicacion": "2024-10-02"
+      "fecha_publicacion": "2024-10-02",
+      "tipo_vehiculo": "SUV",
+      "ubicacion": "Barranquilla, Colombia"
     }
   },
   {
@@ -595,7 +631,9 @@
       "kilometraje": 12000,
       "descripcion": "BMW X3 SUV deportiva, garantía completa",
       "estado": "disponible",
-      "fecha_publicacion": "2024-10-01"
+      "fecha_publicacion": "2024-10-01",
+      "tipo_vehiculo": "SUV",
+      "ubicacion": "Bogotá, Colombia"
     }
   },
   {
@@ -906,6 +944,110 @@
       "precio_final": 17500000,
       "metodo_pago": "Transferencia",
       "estado": "completada"
+    }
+  },
+  {
+    "model": "venta.perfil",
+    "pk": 1,
+    "fields": {
+      "usuario": 1,
+      "descripcion": "Administrador del sistema con experiencia en gestión de plataformas de venta de vehículos",
+      "telefono": "+57 300 123 4567",
+      "direccion": "Calle 100 #50-30",
+      "ciudad": "Bogotá",
+      "foto_perfil": null,
+      "fecha_actualizacion": "2024-01-15T10:00:00"
+    }
+  },
+  {
+    "model": "venta.perfil",
+    "pk": 2,
+    "fields": {
+      "usuario": 2,
+      "descripcion": "Vendedora profesional especializada en automóviles de alta gama",
+      "telefono": "+57 310 234 5678",
+      "direccion": "Carrera 50 #80-45",
+      "ciudad": "Medellín",
+      "foto_perfil": null,
+      "fecha_actualizacion": "2024-02-10T10:00:00"
+    }
+  },
+  {
+    "model": "venta.perfil",
+    "pk": 3,
+    "fields": {
+      "usuario": 3,
+      "descripcion": "Vendedor con más de 5 años de experiencia en el mercado automotriz",
+      "telefono": "+57 315 345 6789",
+      "direccion": "Avenida 6N #28-10",
+      "ciudad": "Cali",
+      "foto_perfil": null,
+      "fecha_actualizacion": "2024-02-20T10:00:00"
+    }
+  },
+  {
+    "model": "venta.perfil",
+    "pk": 4,
+    "fields": {
+      "usuario": 4,
+      "descripcion": "Compradora frecuente buscando vehículos confiables y económicos",
+      "telefono": "+57 320 456 7890",
+      "direccion": "Calle 72 #54-15",
+      "ciudad": "Barranquilla",
+      "foto_perfil": null,
+      "fecha_actualizacion": "2024-03-05T10:00:00"
+    }
+  },
+  {
+    "model": "venta.perfil",
+    "pk": 5,
+    "fields": {
+      "usuario": 5,
+      "descripcion": "Comprador interesado en vehículos familiares y SUV",
+      "telefono": "+57 325 567 8901",
+      "direccion": "Carrera 15 #93-20",
+      "ciudad": "Bogotá",
+      "foto_perfil": null,
+      "fecha_actualizacion": "2024-03-12T10:00:00"
+    }
+  },
+  {
+    "model": "venta.perfil",
+    "pk": 6,
+    "fields": {
+      "usuario": 6,
+      "descripcion": "Vendedora especializada en vehículos premium y de lujo",
+      "telefono": "+57 330 678 9012",
+      "direccion": "Calle 10 #45-67",
+      "ciudad": "Medellín",
+      "foto_perfil": null,
+      "fecha_actualizacion": "2024-03-18T10:00:00"
+    }
+  },
+  {
+    "model": "venta.perfil",
+    "pk": 7,
+    "fields": {
+      "usuario": 7,
+      "descripcion": "Comprador buscando su primer vehículo",
+      "telefono": "+57 335 789 0123",
+      "direccion": "Avenida 4 #25-30",
+      "ciudad": "Cali",
+      "foto_perfil": null,
+      "fecha_actualizacion": "2024-04-01T10:00:00"
+    }
+  },
+  {
+    "model": "venta.perfil",
+    "pk": 8,
+    "fields": {
+      "usuario": 8,
+      "descripcion": "Vendedora con enfoque en vehículos económicos y prácticos",
+      "telefono": "+57 340 890 1234",
+      "direccion": "Carrera 30 #70-12",
+      "ciudad": "Barranquilla",
+      "foto_perfil": null,
+      "fecha_actualizacion": "2024-04-08T10:00:00"
     }
   }
 ]

@@ -107,3 +107,11 @@ class LogActividadAdmin(admin.ModelAdmin):
     list_filter = ('fecha', 'accion')
     search_fields = ('usuario__nombre', 'usuario__apellido', 'accion', 'ip')
     raw_id_fields = ('usuario',)
+
+
+@admin.register(models.Perfil)
+class PerfilAdmin(admin.ModelAdmin):
+    list_display = ('id', 'usuario', 'descripcion', 'telefono', 'direccion')
+    search_fields = ('usuario__nombre', 'usuario__apellido',)
+    raw_id_fields = ('usuario',)
+

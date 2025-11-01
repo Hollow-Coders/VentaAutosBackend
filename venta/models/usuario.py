@@ -6,9 +6,16 @@ class Usuario(models.Model):
         help_text='Nombre del usuario'
     )
     apellido = models.CharField(
-        max_length=60,
+        max_length=150,
         help_text='Apellido del usuario'
     )
+    
+    nombre_completo = models.CharField(
+        max_length=250,
+        null=True,
+        blank=True,
+        help_text='Nombre concatenado del usuario')
+    
     correo = models.EmailField(
         max_length=80,
         unique=True,
