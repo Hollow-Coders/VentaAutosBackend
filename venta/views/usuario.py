@@ -28,6 +28,7 @@ class UsuarioViewSet(viewsets.ModelViewSet):
     def compras(self, request, pk=None):
         """
         Obtiene las compras de un usuario específico
+
         GET /venta/usuarios/{id}/compras/
         """
         try:
