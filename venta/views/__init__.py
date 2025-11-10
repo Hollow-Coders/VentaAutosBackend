@@ -12,3 +12,5 @@ from .vehiculo import VehiculoViewSet
 from .venta import VentaViewSet
 from .perfil import PerfilViewSet
 from .catalogo import CatalogoViewSet
+from .conversacion import ConversacionViewSet
+from .mensaje import MensajeViewSet
