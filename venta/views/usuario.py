@@ -17,8 +17,8 @@ from venta.filters import UsuarioFilter
 
 class UsuarioViewSet(viewsets.ModelViewSet):
     """
-    View de Usuarios
-    Maneja CRUD
+    ViewSet de Usuarios
+    Maneja CRUD de usuarios
     """
     queryset = Usuario.objects.all()
     serializer_class = UsuarioSerializer
@@ -27,7 +27,8 @@ class UsuarioViewSet(viewsets.ModelViewSet):
     @action(detail=True, methods=['get'])
     def compras(self, request, pk=None):
         """
-        Obtiene todas las compras realizadas por un usuario específico
+        Obtiene las compras de un usuario específico
+
         GET /venta/usuarios/{id}/compras/
         """
         try:
