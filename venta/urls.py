@@ -18,6 +18,8 @@ router.register('vehiculo_fotos', views.VehiculoFotoViewSet)
 router.register('ventas', views.VentaViewSet)
 router.register('perfiles', views.PerfilViewSet)
 router.register('catalogo', views.CatalogoViewSet, basename='catalogo')
+router.register('conversaciones', views.ConversacionViewSet)
+router.register('mensajes', views.MensajeViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),

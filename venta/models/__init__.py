@@ -14,3 +14,5 @@ from .solicitud_verificacion import SolicitudVerificacion
 from .documento import Documento
 from .log_actividad import LogActividad
 from .perfil import Perfil
+from .conversacion import Conversacion
+from .mensaje import Mensaje
