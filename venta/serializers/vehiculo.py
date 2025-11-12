@@ -54,5 +54,8 @@ class VehiculoSerializer(serializers.ModelSerializer):
     
     def get_total_documentos(self, obj):
         """Retorna el total de documentos del vehículo"""
+        total = getattr(obj, 'total_documentos_annotated', None)
+        if total is not None:
+            return total
         return obj.documentos.count()
 

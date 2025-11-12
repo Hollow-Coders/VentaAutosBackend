@@ -35,10 +35,16 @@ class SubastaSerializer(serializers.ModelSerializer):
     
     def get_total_pujas(self, obj):
         """Retorna el total de pujas"""
+        total = getattr(obj, 'total_pujas_annotated', None)
+        if total is not None:
+            return total
         return obj.pujas.count()
     
     def get_precio_actual(self, obj):
         """Retorna el precio actual (la puja más alta)"""
+        precio = getattr(obj, 'precio_actual_annotated', None)
+        if precio is not None:
+            return precio
         ultima_puja = obj.pujas.order_by('-monto').first()
         return ultima_puja.monto if ultima_puja else obj.precio_inicial
 

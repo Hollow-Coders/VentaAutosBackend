@@ -1,10 +1,10 @@
 from rest_framework import viewsets
 from rest_framework.decorators import action
 from rest_framework.response import Response
-from django.db.models import Q
+from django.db.models import Q, OuterRef, Subquery
 
 # models
-from venta.models import Vehiculo
+from venta.models import Vehiculo, VehiculoFoto
 
 # serializers
 from venta.serializers import CatalogoSerializer
@@ -23,10 +23,18 @@ class CatalogoViewSet(viewsets.ReadOnlyModelViewSet):
         QuerySet optimizado con select_related y solo campos necesarios
         Filtra solo vehículos disponibles
         """
+        first_photo_subquery = Subquery(
+            VehiculoFoto.objects.filter(
+                vehiculo=OuterRef('pk')
+            ).order_by('pk').values('url_imagen')[:1]
+        )
+        
         queryset = Vehiculo.objects.filter(
             estado='disponible'
         ).select_related(
             'marca', 'modelo'
+        ).annotate(
+            foto_principal_path=first_photo_subquery
         ).only(
             'id',
             'marca__nombre',

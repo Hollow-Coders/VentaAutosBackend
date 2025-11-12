@@ -2,7 +2,8 @@ from rest_framework import viewsets
 from rest_framework.decorators import action
 from rest_framework.response import Response
 from rest_framework import status
-from django.db.models import Q
+from django.db.models import Q, Count, OuterRef, Subquery, Value, F
+from django.db.models.functions import Concat
 from django.utils import timezone
 
 # models
@@ -25,9 +26,47 @@ class ConversacionViewSet(viewsets.ModelViewSet):
     ViewSet de Conversaciones
     Maneja CRUD de conversaciones y mensajes
     """
-    queryset = Conversacion.objects.select_related('vendedor', 'comprador', 'venta').all()
+    queryset = Conversacion.objects.none()
     serializer_class = ConversacionSerializer
     filterset_class = ConversacionFilter
+    
+    def get_queryset(self):
+        """
+        Optimiza el queryset con campos anotados para evitar consultas N+1.
+        """
+        ultimo_mensaje_base = Mensaje.objects.filter(
+            conversacion=OuterRef('pk')
+        ).order_by('-fecha_envio')
+        
+        ultimo_mensaje_nombre = ultimo_mensaje_base.annotate(
+            nombre_completo=Concat(
+                F('remitente__nombre'),
+                Value(' '),
+                F('remitente__apellido')
+            )
+        )
+        
+        return (
+            Conversacion.objects.select_related('vendedor', 'comprador', 'venta')
+            .annotate(
+                total_mensajes_annotated=Count('mensajes', distinct=True),
+                ultimo_mensaje_id_annotated=Subquery(
+                    ultimo_mensaje_base.values('id')[:1]
+                ),
+                ultimo_mensaje_contenido_annotated=Subquery(
+                    ultimo_mensaje_base.values('contenido')[:1]
+                ),
+                ultimo_mensaje_fecha_annotated=Subquery(
+                    ultimo_mensaje_base.values('fecha_envio')[:1]
+                ),
+                ultimo_mensaje_remitente_id_annotated=Subquery(
+                    ultimo_mensaje_base.values('remitente_id')[:1]
+                ),
+                ultimo_mensaje_remitente_nombre_annotated=Subquery(
+                    ultimo_mensaje_nombre.values('nombre_completo')[:1]
+                )
+            )
+        )
     
     def create(self, request, *args, **kwargs):
         """
@@ -213,10 +252,10 @@ class ConversacionViewSet(viewsets.ModelViewSet):
         
         try:
             usuario = Usuario.objects.get(id=usuario_id)
-            conversaciones = Conversacion.objects.filter(
+            conversaciones = self.get_queryset().filter(
                 Q(vendedor=usuario) | Q(comprador=usuario),
                 activa=True
-            ).select_related('vendedor', 'comprador', 'venta').prefetch_related('mensajes').order_by('-fecha_actualizacion')
+            ).order_by('-fecha_actualizacion')
             
             serializer = self.get_serializer(conversaciones, many=True, context={'request': request})
             return Response({

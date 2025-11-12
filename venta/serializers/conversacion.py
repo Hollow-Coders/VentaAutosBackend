@@ -39,6 +39,16 @@ class ConversacionSerializer(serializers.ModelSerializer):
     
     def get_ultimo_mensaje(self, obj):
         """Retorna el último mensaje de la conversación"""
+        mensaje_id = getattr(obj, 'ultimo_mensaje_id_annotated', None)
+        if mensaje_id:
+            return {
+                'id': mensaje_id,
+                'contenido': getattr(obj, 'ultimo_mensaje_contenido_annotated', None),
+                'remitente': getattr(obj, 'ultimo_mensaje_remitente_id_annotated', None),
+                'remitente_nombre': getattr(obj, 'ultimo_mensaje_remitente_nombre_annotated', None),
+                'fecha_envio': getattr(obj, 'ultimo_mensaje_fecha_annotated', None),
+            }
+        
         ultimo_mensaje = obj.mensajes.last()
         if ultimo_mensaje:
             return {
@@ -52,6 +62,9 @@ class ConversacionSerializer(serializers.ModelSerializer):
     
     def get_cantidad_mensajes(self, obj):
         """Retorna la cantidad total de mensajes en la conversación"""
+        total = getattr(obj, 'total_mensajes_annotated', None)
+        if total is not None:
+            return total
         return obj.mensajes.count()
     
     def get_venta_id(self, obj):
