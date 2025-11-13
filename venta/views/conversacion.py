@@ -13,8 +13,7 @@ from venta.models import Conversacion, Mensaje, Usuario, Venta
 from venta.serializers import (
     ConversacionSerializer, 
     ConversacionDetalleSerializer,
-    MensajeSerializer,
-    MensajeCreateSerializer
+    MensajeSerializer
 )
 
 # filters

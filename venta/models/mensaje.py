@@ -3,13 +3,13 @@ from django.db import models
 
 class Mensaje(models.Model):
     """
-    Modelo para representar un mensaje en una conversación
+    Modelo para representar un mensaje en una venta
     """
-    conversacion = models.ForeignKey(
-        'venta.Conversacion',
+    venta = models.ForeignKey(
+        'venta.Venta',
         on_delete=models.CASCADE,
         related_name='mensajes',
-        help_text='Conversación a la que pertenece el mensaje'
+        help_text='Venta a la que pertenece el mensaje'
     )
     remitente = models.ForeignKey(
         'venta.Usuario',
@@ -28,28 +28,16 @@ class Mensaje(models.Model):
         default=False,
         help_text='Indica si el mensaje ha sido leído'
     )
-    fecha_lectura = models.DateTimeField(
-        null=True,
-        blank=True,
-        help_text='Fecha y hora en que se leyó el mensaje'
-    )
 
     class Meta:
         db_table = 'mensajes'
         ordering = ['fecha_envio']
         verbose_name = 'Mensaje'
         verbose_name_plural = 'Mensajes'
+        indexes = [
+            models.Index(fields=['venta', 'fecha_envio']),
+        ]
 
     def __str__(self):
-        return f"Mensaje de {self.remitente} en conversación {self.conversacion.id}"
-
-    def marcar_como_leido(self):
-        """
-        Marca el mensaje como leído
-        """
-        from django.utils import timezone
-        if not self.leido:
-            self.leido = True
-            self.fecha_lectura = timezone.now()
-            self.save()
+        return f"Mensaje de {self.remitente} en venta {self.venta.id}"
 

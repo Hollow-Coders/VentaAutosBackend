@@ -5,8 +5,8 @@ from venta.models import Mensaje
 class MensajeFilter(django_filters.FilterSet):
     """Filtros para el modelo Mensaje"""
     
-    # Filtros por conversación
-    conversacion = django_filters.NumberFilter(field_name='conversacion__id')
+    # Filtros por venta
+    venta = django_filters.NumberFilter(field_name='venta__id')
     
     # Filtros por remitente
     remitente = django_filters.NumberFilter(field_name='remitente__id')
@@ -19,11 +19,15 @@ class MensajeFilter(django_filters.FilterSet):
     # Filtro por contenido
     contenido = django_filters.CharFilter(field_name='contenido', lookup_expr='icontains')
     
+    # Filtro por estado de lectura
+    leido = django_filters.BooleanFilter(field_name='leido')
+    
     class Meta:
         model = Mensaje
         fields = [
-            'conversacion',
+            'venta',
             'remitente',
             'fecha_envio',
+            'leido',
         ]
 
