@@ -1,7 +1,7 @@
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
 from . import views
-from .views import auth
+from .views import auth, chat
 
 router = DefaultRouter()
 router.register('vehiculos', views.VehiculoViewSet)
@@ -21,9 +21,17 @@ router.register('catalogo', views.CatalogoViewSet, basename='catalogo')
 router.register('conversaciones', views.ConversacionViewSet)
 router.register('mensajes', views.MensajeViewSet)
 
+# Router para el chat
+chat_router = DefaultRouter()
+chat_router.register('mensajes', views.MensajeViewSet, basename='chat-mensajes')
+
 urlpatterns = [
     path('', include(router.urls)),
     path('register/', auth.RegisterView.as_view(), name='register'),
-    path('login/', auth.LoginView.as_view(), name='login'),  
+    path('login/', auth.LoginView.as_view(), name='login'),
+    # Rutas específicas del chat (deben ir antes del router para tener prioridad)
+    path('chat/venta/<int:venta_id>/mensajes/', chat.mensajes_por_venta, name='mensajes-por-venta'),
+    path('chat/conversaciones/', chat.conversaciones, name='conversaciones'),
+    path('chat/', include(chat_router.urls)),
 ]
 

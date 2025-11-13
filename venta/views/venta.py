@@ -4,6 +4,7 @@ from rest_framework import viewsets
 from rest_framework.decorators import action
 from rest_framework.response import Response
 from rest_framework import status
+from django_filters.rest_framework import DjangoFilterBackend
 
 # models
 from venta.models import Venta, Usuario
@@ -23,6 +24,14 @@ class VentaViewSet(viewsets.ModelViewSet):
     queryset = Venta.objects.all()
     serializer_class = VentaSerializer
     filterset_class = VentaFilter
+    filter_backends = [DjangoFilterBackend]
+    
+    def get_filterset(self, *args, **kwargs):
+        """Pasa el request al FilterSet para que pueda acceder al usuario autenticado"""
+        filterset = super().get_filterset(*args, **kwargs)
+        if filterset:
+            filterset.request = self.request
+        return filterset
     
     @action(detail=False, methods=['get'])
     def mis_compras(self, request):
