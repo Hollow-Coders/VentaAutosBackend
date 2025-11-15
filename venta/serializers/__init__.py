@@ -13,4 +13,4 @@ from .venta import VentaSerializer
 from .perfil import PerfilSerializer
 from .catalogo import CatalogoSerializer
 from .conversacion import ConversacionSerializer, ConversacionDetalleSerializer
-from .mensaje import MensajeSerializer
+from .mensaje import MensajeSerializer, SolicitudMensajeSerializer

@@ -21,17 +21,12 @@ router.register('catalogo', views.CatalogoViewSet, basename='catalogo')
 router.register('conversaciones', views.ConversacionViewSet)
 router.register('mensajes', views.MensajeViewSet)
 
-# Router para el chat
-chat_router = DefaultRouter()
-chat_router.register('mensajes', views.MensajeViewSet, basename='chat-mensajes')
-
 urlpatterns = [
     path('', include(router.urls)),
     path('register/', auth.RegisterView.as_view(), name='register'),
     path('login/', auth.LoginView.as_view(), name='login'),
-    # Rutas específicas del chat (deben ir antes del router para tener prioridad)
-    path('chat/venta/<int:venta_id>/mensajes/', chat.mensajes_por_venta, name='mensajes-por-venta'),
-    path('chat/conversaciones/', chat.conversaciones, name='conversaciones'),
-    path('chat/', include(chat_router.urls)),
+    # Rutas específicas del chat
+    path('chat/mensajes/', chat.mensajes, name='mensajes'),  # GET y POST
+    path('chat/marcar-leidos/', chat.marcar_como_leidos, name='marcar_como_leidos'),
 ]
 
