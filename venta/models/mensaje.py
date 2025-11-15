@@ -9,12 +9,16 @@ class Mensaje(models.Model):
     # Campos principales para identificar la conversación
     comprador = models.ForeignKey(
         'venta.Usuario',
+        null=True,
+        blank=True,
         on_delete=models.CASCADE,
         related_name='mensajes_como_comprador',
         help_text='Usuario comprador en la conversación'
     )
     vendedor = models.ForeignKey(
         'venta.Usuario',
+        null=True,
+        blank=True,
         on_delete=models.CASCADE,
         related_name='mensajes_como_vendedor',
         help_text='Usuario vendedor en la conversación'
@@ -22,6 +26,8 @@ class Mensaje(models.Model):
     vehiculo = models.ForeignKey(
         'venta.Vehiculo',
         on_delete=models.CASCADE,
+        null=True,
+        blank=True,
         related_name='mensajes',
         help_text='Vehículo sobre el que se está conversando'
     )
