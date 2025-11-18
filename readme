@@ -2,3 +2,5 @@ pip freeze > requirements.txt  ////actualizar requirements
 
 pip install -r requirements.txt ////instalar los requirements
 
+
+python manage.py loaddata venta/fixtures/autos_completos.json /// datos pruebas

@@ -12,6 +12,12 @@ class Modelo(models.Model):
         max_length=45,
         help_text='Nombre del modelo'
     )
+    tipo_vehiculo = models.ForeignKey(
+        'venta.TipoDeVehiculo',
+        on_delete=models.PROTECT,
+        related_name='modelos',
+        help_text='Tipo de vehículo del modelo'
+    )
 
     class Meta:
         db_table = 'modelos'

@@ -54,7 +54,8 @@ class Vehiculo(models.Model):
     )
     tipo_vehiculo = models.CharField(
         max_length=60,
-        default='Automovil',
+        null=False,
+        blank=False,
         help_text='Tipo de vehículo (auto, moto, etc.)'
     )
     ubicacion = models.CharField(

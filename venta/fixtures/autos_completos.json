@@ -24,6 +24,48 @@
     }
   },
   {
+    "model": "venta.tipodevehiculo",
+    "pk": 1,
+    "fields": {
+      "descripcion": "Automovil"
+    }
+  },
+  {
+    "model": "venta.tipodevehiculo",
+    "pk": 2,
+    "fields": {
+      "descripcion": "Motocicleta"
+    }
+  },
+  {
+    "model": "venta.tipodevehiculo",
+    "pk": 3,
+    "fields": {
+      "descripcion": "Camioneta"
+    }
+  },
+  {
+    "model": "venta.tipodevehiculo",
+    "pk": 4,
+    "fields": {
+      "descripcion": "SUV"
+    }
+  },
+  {
+    "model": "venta.tipodevehiculo",
+    "pk": 5,
+    "fields": {
+      "descripcion": "Pickup"
+    }
+  },
+  {
+    "model": "venta.tipodevehiculo",
+    "pk": 6,
+    "fields": {
+      "descripcion": "Van"
+    }
+  },
+  {
     "model": "venta.marca",
     "pk": 1,
     "fields": {
@@ -84,7 +126,8 @@
     "pk": 1,
     "fields": {
       "marca": 1,
-      "nombre": "Corolla"
+      "nombre": "Corolla",
+      "tipo_vehiculo": 1
     }
   },
   {
@@ -92,7 +135,8 @@
     "pk": 2,
     "fields": {
       "marca": 1,
-      "nombre": "Camry"
+      "nombre": "Camry",
+      "tipo_vehiculo": 1
     }
   },
   {
@@ -100,7 +144,8 @@
     "pk": 3,
     "fields": {
       "marca": 1,
-      "nombre": "RAV4"
+      "nombre": "RAV4",
+      "tipo_vehiculo": 4
     }
   },
   {
@@ -108,7 +153,8 @@
     "pk": 4,
     "fields": {
       "marca": 2,
-      "nombre": "Civic"
+      "nombre": "Civic",
+      "tipo_vehiculo": 1
     }
   },
   {
@@ -116,7 +162,8 @@
     "pk": 5,
     "fields": {
       "marca": 2,
-      "nombre": "Accord"
+      "nombre": "Accord",
+      "tipo_vehiculo": 1
     }
   },
   {
@@ -124,7 +171,8 @@
     "pk": 6,
     "fields": {
       "marca": 2,
-      "nombre": "CR-V"
+      "nombre": "CR-V",
+      "tipo_vehiculo": 4
     }
   },
   {
@@ -132,7 +180,8 @@
     "pk": 7,
     "fields": {
       "marca": 3,
-      "nombre": "Focus"
+      "nombre": "Focus",
+      "tipo_vehiculo": 1
     }
   },
   {
@@ -140,7 +189,8 @@
     "pk": 8,
     "fields": {
       "marca": 3,
-      "nombre": "F-150"
+      "nombre": "F-150",
+      "tipo_vehiculo": 5
     }
   },
   {
@@ -148,7 +198,8 @@
     "pk": 9,
     "fields": {
       "marca": 3,
-      "nombre": "Explorer"
+      "nombre": "Explorer",
+      "tipo_vehiculo": 4
     }
   },
   {
@@ -156,7 +207,8 @@
     "pk": 10,
     "fields": {
       "marca": 4,
-      "nombre": "Cruze"
+      "nombre": "Cruze",
+      "tipo_vehiculo": 1
     }
   },
   {
@@ -164,7 +216,8 @@
     "pk": 11,
     "fields": {
       "marca": 4,
-      "nombre": "Equinox"
+      "nombre": "Equinox",
+      "tipo_vehiculo": 4
     }
   },
   {
@@ -172,7 +225,8 @@
     "pk": 12,
     "fields": {
       "marca": 5,
-      "nombre": "Sentra"
+      "nombre": "Sentra",
+      "tipo_vehiculo": 1
     }
   },
   {
@@ -180,7 +234,8 @@
     "pk": 13,
     "fields": {
       "marca": 5,
-      "nombre": "Altima"
+      "nombre": "Altima",
+      "tipo_vehiculo": 1
     }
   },
   {
@@ -188,7 +243,8 @@
     "pk": 14,
     "fields": {
       "marca": 6,
-      "nombre": "Jetta"
+      "nombre": "Jetta",
+      "tipo_vehiculo": 1
     }
   },
   {
@@ -196,7 +252,8 @@
     "pk": 15,
     "fields": {
       "marca": 6,
-      "nombre": "Tiguan"
+      "nombre": "Tiguan",
+      "tipo_vehiculo": 4
     }
   },
   {
@@ -204,7 +261,8 @@
     "pk": 16,
     "fields": {
       "marca": 7,
-      "nombre": "Serie 3"
+      "nombre": "Serie 3",
+      "tipo_vehiculo": 1
     }
   },
   {
@@ -212,7 +270,8 @@
     "pk": 17,
     "fields": {
       "marca": 7,
-      "nombre": "X3"
+      "nombre": "X3",
+      "tipo_vehiculo": 4
     }
   },
   {
@@ -220,7 +279,8 @@
     "pk": 18,
     "fields": {
       "marca": 8,
-      "nombre": "Clase C"
+      "nombre": "Clase C",
+      "tipo_vehiculo": 1
     }
   },
   {
@@ -228,7 +288,8 @@
     "pk": 19,
     "fields": {
       "marca": 8,
-      "nombre": "GLC"
+      "nombre": "GLC",
+      "tipo_vehiculo": 4
     }
   },
   {

@@ -4,6 +4,7 @@ from django.db import models
 from .rol import Rol
 from .usuario import Usuario
 from .marca import Marca
+from .tipo_vehiculo import TipoDeVehiculo
 from .modelo import Modelo
 from .vehiculo import Vehiculo
 from .vehiculo_foto import VehiculoFoto
