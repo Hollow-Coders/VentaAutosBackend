@@ -31,10 +31,11 @@ class VehiculoSerializer(serializers.ModelSerializer):
             'descripcion',
             'estado',
             'fecha_publicacion',
+            'tipo_vehiculo',
             'fotos',
             'total_documentos',
         ]
-        read_only_fields = ['fecha_publicacion']
+        read_only_fields = ['fecha_publicacion', 'tipo_vehiculo']
     
     def get_usuario_nombre(self, obj):
         """Retorna el nombre completo del usuario propietario"""
@@ -58,4 +59,26 @@ class VehiculoSerializer(serializers.ModelSerializer):
         if total is not None:
             return total
         return obj.documentos.count()
+    
+    def create(self, validated_data):
+        """Crea un vehículo y asigna automáticamente el tipo_vehiculo desde el modelo"""
+        # Obtener el modelo para acceder a su tipo_vehiculo
+        modelo = validated_data.get('modelo')
+        if modelo:
+            # Obtener la descripción del tipo de vehículo del modelo
+            tipo_vehiculo_descripcion = modelo.tipo_vehiculo.descripcion
+            # Asignar la descripción al campo tipo_vehiculo del vehículo
+            validated_data['tipo_vehiculo'] = tipo_vehiculo_descripcion
+        
+        return super().create(validated_data)
+    
+    def update(self, instance, validated_data):
+        """Actualiza un vehículo y actualiza el tipo_vehiculo si cambia el modelo"""
+        # Si se actualiza el modelo, actualizar también el tipo_vehiculo
+        modelo = validated_data.get('modelo', instance.modelo)
+        if modelo:
+            tipo_vehiculo_descripcion = modelo.tipo_vehiculo.descripcion
+            validated_data['tipo_vehiculo'] = tipo_vehiculo_descripcion
+        
+        return super().update(instance, validated_data)
 
