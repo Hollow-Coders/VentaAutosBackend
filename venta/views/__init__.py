@@ -14,4 +14,5 @@ from .perfil import PerfilViewSet
 from .catalogo import CatalogoViewSet
 from .conversacion import ConversacionViewSet
 from .mensaje import MensajeViewSet
+from .valoracion import ValoracionViewSet
 from . import chat
