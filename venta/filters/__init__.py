@@ -12,3 +12,4 @@ from .vehiculo import VehiculoFilter
 from .venta import VentaFilter
 from .conversacion import ConversacionFilter
 from .mensaje import MensajeFilter
+from .valoracion import ValoracionFilter

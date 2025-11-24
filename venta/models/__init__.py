@@ -17,3 +17,4 @@ from .log_actividad import LogActividad
 from .perfil import Perfil
 from .conversacion import Conversacion
 from .mensaje import Mensaje
+from .valoracion import Valoracion
