@@ -48,6 +48,22 @@ class Vehiculo(models.Model):
         default='disponible',
         help_text='Estado del vehículo'
     )
+    nota_de_administrador = models.CharField(
+        max_length=250,
+        null=True,
+        blank=True,
+        help_text='Nota de administrador'
+    )
+    
+    administrador_que_evaluo = models.ForeignKey(
+        'venta.Usuario',
+        null=True,
+        blank=True,
+        on_delete=models.DO_NOTHING,
+        related_name='vehiculos_evaluados',
+        help_text='Administrador que evaluó el vehículo'
+    )
+    
     fecha_publicacion = models.DateField(
         auto_now_add=True,
         help_text='Fecha de publicación'

@@ -18,6 +18,8 @@ class VehiculoSerializer(serializers.ModelSerializer):
             'id',
             'usuario',
             'usuario_nombre',
+            'nota_de_administrador',
+            'administrador_que_evaluo',
             'marca',
             'marca_nombre',
             'modelo',

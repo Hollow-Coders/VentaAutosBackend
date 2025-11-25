@@ -55,6 +55,8 @@ class VehiculoFilter(django_filters.FilterSet):
             'marca',
             'modelo',
             'año',
+            'nota_de_administrador',
+            'administrador_que_evaluo',
             'precio',
             'tipo_transmision',
             'tipo_combustible',
